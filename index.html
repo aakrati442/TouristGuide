@@ -126,7 +126,7 @@ input[type=text], select {
                 const db=getDatabase();
                 var Name=document.getElementById("name");
                 var email=document.getElementById("email");
-                // var list=document.getElementById("list");
+                var list=document.getElementById("list");
         
                 document.getElementById("form").addEventListener("submit",input);
                 var n,e;
@@ -134,7 +134,7 @@ input[type=text], select {
                 {
                     n=Name.value;
                     e=email.value;
-                    // l=list.value;
+                    l=list.value;
                 }
         
                 function input(event){
@@ -143,7 +143,7 @@ input[type=text], select {
                     set(ref(db,"Message/"+e.substring(0,e.indexOf('@'))),{
                         Name:n,
                         Email:e,
-                        // list:l
+                        list:l
                     }).then(()=>{
                         alert("Message Sent Successfully");
                         this.reset();
